@@ -1,0 +1,83 @@
+body{
+	padding: 0;
+	font-family: sans-serif;
+}
+
+/*****************Modal*/
+.nice-modal{
+	display: block
+}
+
+.nice-wrapper {
+	-webkit-animation: zoom-lightbox 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	 animation: zoom-lightbox 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	 background: white;
+	 padding: 50px;
+	 position: absolute;
+   display: none;
+}
+
+.overlay {
+    background: black;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    display: none
+}
+
+.overlay.nice-modal-show,.overlay.nice-modal-show .nice-wrapper {
+   display: block;
+} 
+
+@-webkit-keyframes zoom-lightbox {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes zoom-lightbox {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+/**************************Icono cerrar*/
+
+.close-modal {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 10px;
+  height: 10px;
+  opacity: 0.3;
+  display: block;
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  opacity: 1;
+}
+.close-modal:before, .close-modal:after {
+  position: absolute;
+  left: 5px;
+  content: ' ';
+  height: 10px;
+  width: 1px;
+  background-color: #333;
+}
+.close-modal:before {
+  transform: rotate(45deg);
+}
+.close-modal:after {
+  transform: rotate(-45deg);
+}
