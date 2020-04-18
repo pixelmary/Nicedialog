@@ -1,10 +1,11 @@
 /** 
- * Nice modal class
+ * Nice Dialog class v.2.0
  * @constructor This create the modal and the divs to append them in the showModal method 
  * @showModal Method Appends the close button and the overlay layer to the modal div
-*/
+ */
+
 class Dialog {
-	constructor(){
+	constructor() {
 		this.closeButton = document.createElement('span');
 		this.overlay = document.createElement('div');
 		this.niceModal = document.createElement('div');
@@ -12,16 +13,11 @@ class Dialog {
 		this.closeButton.classList.add('close-modal');
 		this.overlay.classList.add('overlay');
 		this.niceModal.classList.add('nice-modal');
-		
-		let self = this;
-		this.closeButton.addEventListener('click',function(){
-			self.closeModal();
-		})
 
+		this.closeButton.addEventListener('click', this.closeModal.bind(this));
 	}
 
-	showModal(selector){
-
+	showModal(selector) {
 		let niceWrapper = document.querySelector(selector);
 		let body = document.querySelector('body');
 
@@ -41,11 +37,9 @@ class Dialog {
 
 		niceWrapper.style.right = niceWrapperPosX + 'px';
 		niceWrapper.style.top = niceWrapperPosY + 'px';
-
 	}
 
-	closeModal () {
+	closeModal() {
 		this.overlay.classList.remove('nice-modal-show');
 	}
-
 }
